@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aurora Agency • Glassmorphism</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0f1a;--c1:#7cf7ff;--c2:#8a7cff;--c3:#ff79c6;--txt:#e9f0ff;
+  --glass:rgba(255,255,255,.08);--blur:18px;
+}
+*{box-sizing:border-box} body{margin:0;background:radial-gradient(1200px 800px at 15% 20%,#16203a 0%,#0b0f1a 45%),#0b0f1a;color:var(--txt);font-family:Poppins,system-ui;}
+a{color:inherit;text-decoration:none}
+nav{position:fixed;inset:20px 20px auto;display:flex;gap:18px;align-items:center;z-index:10;padding:10px 16px;background:var(--glass);
+-webkit-backdrop-filter:blur(var(--blur));backdrop-filter:blur(var(--blur));border:1px solid rgba(255,255,255,.12);border-radius:12px;box-shadow:0 4px 30px rgba(0,0,0,.3)}
+nav .sp{flex:1}
+.btn{padding:10px 16px;border-radius:12px;background:linear-gradient(135deg,var(--c1),var(--c2));color:#051018;font-weight:700}
+.hero{min-height:100svh;display:grid;place-items:center;position:relative;overflow:hidden;padding:120px 24px 64px}
+h1{font-size:clamp(32px,6vw,64px);line-height:1.05;margin:0 0 16px}
+p.lead{max-width:760px;opacity:.9;font-size:clamp(16px,2.5vw,20px)}
+.cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:22px}
+.ghost{border:1px solid rgba(255,255,255,.2);background:transparent;color:var(--txt)}
+.blob{position:absolute;inset:auto;filter:blur(50px);opacity:.65;animation:float 14s ease-in-out infinite}
+.blob.b1{width:420px;height:420px;background:radial-gradient(circle at 30% 30%,var(--c1),transparent 60%);top:-60px;left:-60px}
+.blob.b2{width:520px;height:520px;background:radial-gradient(circle at 70% 40%,var(--c2),transparent 60%);bottom:-100px;right:-80px;animation-delay:1.8s}
+@keyframes float{50%{transform:translateY(-18px) translateX(8px) scale(1.03)}}
+.cardrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:42px;max-width:1100px}
+.card{background:var(--glass);-webkit-backdrop-filter:blur(var(--blur));backdrop-filter:blur(var(--blur));border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:18px;transition:.35s transform,.35s box-shadow}
+.card:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.badge{display:inline-block;padding:6px 10px;border-radius:999px;background:linear-gradient(135deg,var(--c3),var(--c2));color:#0b0f1a;font-weight:700;font-size:12px;margin-bottom:10px}
+footer{padding:48px 20px;text-align:center;opacity:.7}
+.gradientText{background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3));-webkit-background-clip:text;background-clip:text;color:transparent}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">AURORA</div>
+  <div class="sp"></div>
+  <a href="#work">Work</a><a href="#about">About</a><a href="#contact" class="btn">Hire Us</a>
+</nav>
+
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div>
+  <div>
+    <h1>We build <span class="gradientText">stunning brands</span> & blazing-fast sites.</h1>
+    <p class="lead">A boutique studio crafting immersive interfaces with motion, micro-interactions and performance at heart. Glassy, glossy, gorgeous.</p>
+    <div class="cta">
+      <a class="btn" href="#work">See Projects</a>
+      <a class="btn ghost" href="#contact">Get a Quote</a>
+    </div>
+    <div id="work" class="cardrow">
+      <article class="card"><span class="badge">UI/UX</span><h3>Product Design</h3><p>Design systems, prototypes, accessibility-first.</p></article>
+      <article class="card"><span class="badge">Web</span><h3>Web Experiences</h3><p>Next-gen landing pages with delightful motion.</p></article>
+      <article class="card"><span class="badge">Brand</span><h3>Identity</h3><p>Logos, palettes, voice and guidelines that scale.</p></article>
+      <article class="card"><span class="badge">Perf</span><h3>Optimization</h3><p>Core Web Vitals obsessed. Speed is a feature.</p></article>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">© 2025 Aurora Studio — hello@aurora.design</footer>
+</body>
+</html>
